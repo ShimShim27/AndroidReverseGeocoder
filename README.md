@@ -1,7 +1,11 @@
 # 📍 AndroidReverseGeocoder
-Library for reverse geocoding coordinates in Android. <br/>
+A library for reverse geocoding coordinates in Android. The library is built on top of android's [Geocoder](https://developer.android.com/reference/android/location/Geocoder) library.
+AndroidReverseGeocoder implements results caching mechanism to prevent repetitive processing of an already reverse geocoded coordinates. AndroidReverseGeocoder
+also incorporates Java's [ExecutorService](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html) for simultaneous reverse geocoding of coordinates. AndroidReverseGeocoder also handles errors that
+may be thrown by the original [Geocoder](https://developer.android.com/reference/android/location/Geocoder) library.
+<br/>
 
-## Add androidreversegeocoder library 📙
+## Add AndroidReverseGeocoder library 📙
 Add in [build.gradle file](https://github.com/ShimShim27/AndroidReverseGeocoder/blob/master/build.gradle)
 ```
 allprojects {
@@ -33,10 +37,10 @@ reverseGeocoder.reverse(
       }
   }
 ```
-2. Reverse geocoding multiple string
+2. Reverse geocoding two coordinates at a time
 
 ```
-val reverseGeocoder = ReverseGeocoder(nThreads = 1, nCoordinatesCached = 50)
+val reverseGeocoder = ReverseGeocoder(nThreads = 2, nCoordinatesCached = 50)
         
 val coordinates = listOf(Pair(-55.45134, 153.48612), Pair(65.57829, -116.16070), Pair(-25.15858, -117.67318), Pair(-55.45134, 153.48612))
 
