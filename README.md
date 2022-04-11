@@ -1,7 +1,7 @@
-# AndroidReverseGeocoder
+# 📍 AndroidReverseGeocoder
 Library for reverse geocoding coordinates in Android. <br/>
 
-## Add  androidreversegeocoder library
+## Add androidreversegeocoder library 📙
 Add in build.gradle file
 ```
 allprojects {
@@ -18,7 +18,7 @@ dependencies {
 }
 ```
 
-## Sample Usage
+## Sample Usage 🧞
 1. Show a toast of the name of place associated with coordinates 10.68532, -146.69885
 ```
 val reverseGeocoder = ReverseGeocoder(nThreads = 1, nCoordinatesCached = 50)
@@ -51,7 +51,7 @@ for (coords in coordinates){
 }
 ```
 
-## Note
+## Note ❗
 Always call shutdownAll() in ReverseGeocoder instance to cancel all reverse geocoding processes (especially when the current activity is destroyed). 
 After shutdownAll() is called, function reverse() will not work properly if called again from the same instance of ReverseGeocoder. 
 The function createNew() should be called in this case to re-enable reverse() function or create a new instance of ReverseGeocoder function.
