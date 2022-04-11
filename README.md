@@ -2,7 +2,7 @@
 Library for reverse geocoding coordinates in Android. <br/>
 
 ## Add androidreversegeocoder library 📙
-Add in build.gradle file
+Add in [build.gradle file](https://github.com/ShimShim27/AndroidReverseGeocoder/blob/master/build.gradle)
 ```
 allprojects {
   repositories {
@@ -11,7 +11,7 @@ allprojects {
   }
 }
 ```
-Add in build.gradle (app level) file
+Add in [build.gradle](https://github.com/ShimShim27/AndroidReverseGeocoder/blob/master/app/build.gradle) (app level) file
 ```
 dependencies {
   implementation 'com.github.ShimShim27:AndroidReverseGeocoder:v1.0'
@@ -51,7 +51,7 @@ for (coords in coordinates){
 }
 ```
 
-## Note ❗
+## Note 🤫
 Always call shutdownAll() in ReverseGeocoder instance to cancel all reverse geocoding processes (especially when the current activity is destroyed). 
 After shutdownAll() is called, function reverse() will not work properly if called again from the same instance of ReverseGeocoder. 
 The function createNew() should be called in this case to re-enable reverse() function or create a new instance of ReverseGeocoder function.
