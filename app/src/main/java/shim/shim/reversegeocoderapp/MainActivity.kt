@@ -1,7 +1,6 @@
 package shim.shim.reversegeocoderapp
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import shim.shim.androidreversegeocoder.ReverseGeocoder
 
@@ -11,15 +10,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val reverseGeocoder = ReverseGeocoder(nThreads = 1, nCoordinatesCached = 50)
-        reverseGeocoder.reverse(
-            context = this,
-            lat = 10.68532,
-            long = -146.69885,
-            onAddressResult = {addressName:String->
-                runOnUiThread {
-                    Toast.makeText(this,"The address is $addressName", Toast.LENGTH_SHORT).show()
-                }
-            })
+
+        val coordinates = listOf(Pair(-55.45134, 153.48612), Pair(65.57829, -116.16070), Pair(-25.15858, -117.67318), Pair(-55.45134, 153.48612))
+
+        for (coords in coordinates){
+            reverseGeocoder.reverse(
+                context = this,
+                lat = coords.first,
+                long = coords.second,
+                onAddressResult = {addressName:String->
+                    print("The address is $addressName")
+                })
+        }
 
     }
 }
